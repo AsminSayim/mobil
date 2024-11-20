@@ -1,0 +1,122 @@
+1.uygulama
+public static void main(String[] args) {
+        System.out.println("Musti");
+    }
+2.uygulama=sayı toplama
+ public static void main(String[] args) {
+        int sayi1=30;
+        int sayi2=60;
+        int toplam=sayi1+sayi2;
+        System.out.println("Toplam :"+toplam);
+
+    }
+3.uyg=yazılı
+ public static void main(String[] args) {
+        float yazili1,yazili2,ortalama;
+        Scanner oku=new Scanner(System.in);
+
+        System.out.print("Yazılı 1. Gir:");
+        yazili1= oku.nextFloat();
+
+        System.out.print("Yazılı 2. Gir:");
+        yazili2= oku.nextFloat();
+
+        ortalama=(yazili1+yazili2)/2;
+        System.out.println("Ortalmanız:"+ortalama);
+    }
+4.uyg=alan_cevre
+ public static void main(String[] args) {
+        int kisakenar,uzunkenar,alan,cevre;
+        Scanner oku = new Scanner(System.in);
+
+        System.out.print("Kısa kenarı gir: ");
+        kisakenar = oku.nextInt();
+
+        System.out.print("Uzun kenarı gir: ");
+        uzunkenar = oku.nextInt();
+
+        alan=kisakenar*uzunkenar;
+        System.out.println("Alanı:"+alan);
+
+        cevre=(kisakenar+uzunkenar)*2;
+        System.out.println("Çevre:"+cevre);
+
+
+
+    }
+5.uygl=string kullanımı
+public static void main(String[] args) {
+        Scanner oku=new Scanner(System.in);
+
+        String ad;
+
+        System.out.print("Adınız:");
+        ad=oku.next();
+
+        System.out.println("Hoşgeldiniz:"+ad);
+    }
+6.uyg=daire_alanı
+  public static void main(String[] args) {
+
+        Scanner oku= new Scanner(System.in);
+        double r,cevre,alan;
+        final double PI=3.14;
+
+        System.out.println("Yarıçapı Girin:");
+        r=oku.nextDouble();
+
+        cevre=2*PI*r;
+        alan=PI*r*r;
+
+        System.out.println("Alanı:"+alan);
+        System.out.println("Çevre:"+cevre);
+
+
+    }
+7.uyglm=zam.43 zamı biz 43 olara verdik
+ public static void main(String[] args) {
+
+        Scanner oku=new Scanner(System.in);
+
+        System.out.print("Mevcut Maaşı Gir:");
+        double mevcutMaas=oku.nextDouble();
+
+        double zamOrani=0.43;
+        double yeniMaas=mevcutMaas+(mevcutMaas*zamOrani);
+
+        System.out.println("Yeni Maaş:"+yeniMaas);
+
+    }
+8=zam kendisi gırıyo
+  public static void main(String[] args) {
+
+        Scanner oku=new Scanner(System.in);
+
+        System.out.print("Mevcut Maaşı Gir:");
+        double mevcutMaas=oku.nextDouble();
+
+        System.out.print("Zam Oranı % Gir:");
+        double zamOrani=oku.nextDouble()/100;
+
+        double yeniMaas=mevcutMaas+(mevcutMaas*zamOrani);
+
+        System.out.println("Yeni Maaş:"+yeniMaas);
+    }
+
+9=kare hesaplama kullanıcı sadece c yi yazcak
+
+     public static void main(String[] args) {
+        Scanner oku=new Scanner(System.in);
+        double a,b,c;
+
+        System.out.print("(a) Gir:");
+        a=oku.nextDouble();
+
+        System.out.print("(b) Gir:");
+        b=oku.nextDouble();
+
+        c=Math.sqrt(a*a+b*b);
+        System.out.println("Hiptenüs:"+c);
+
+
+    }

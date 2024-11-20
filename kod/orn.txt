@@ -1,0 +1,301 @@
+public static void main(String[] args) {yazılı ortalama gecti kaldı
+ 
+        Scanner reader=new Scanner(System.in);
+ 
+        float yazili1,yazili2,ortalama;
+        System.out.print("1. Yazılı: ");
+        yazili1=reader.nextFloat();
+        System.out.print("2. Yazılı: ");
+        yazili2=reader.nextFloat();
+ 
+        ortalama=(yazili1+yazili2)/2;
+ 
+        System.out.println("Ortalamanız: "+ortalama);
+ 
+        if(ortalama>=50){
+            System.out.println("Geçtiniz.");
+        }
+        else{
+            System.out.println("Kaldınız.");
+        }
+ 
+    }
+dikdortgen alan cevre hesaplama
+public static void main(String[] args) {
+ 
+        Scanner oku=new Scanner(System.in);
+ 
+        int kisa,uzun,alan,cevre;
+        System.out.print("Kısa Kenar : ");
+        kisa=oku.nextInt();
+        System.out.print("Uzun Kenar : ");
+        uzun=oku.nextInt();
+        alan=kisa*uzun;
+        cevre=2*(kisa+uzun);
+ 
+        System.out.println("Çevre: "+cevre);
+        System.out.println("Alan: "+alan);
+ 
+    }
+ girilen sayı tek mi çift mi
+public static void main(String[] args) 
+    {
+        int x;
+        System.out.println("Kontrol edilecek sayiyi giriniz:");
+        Scanner scanner = new Scanner (System.in);
+        
+        x = scanner.nextInt();
+        
+        if (x%2 ==0)
+        {
+            System.out.println("Sayiniz çift sayidir.");
+        }
+        else 
+        {
+            System.out.println("Sayiniz tek sayidir.");
+        }
+    }
+ebob ekok 
+public class JavaOrnekleri {
+  
+    public static void main(String[] args) {
+         int n1 = 48, n2 = 160,ebob=1, ekok;
+ 
+       for(int i = 1; i <= n1 && i <= n2; ++i)
+        {
+            if(n1 % i == 0 && n2 % i == 0)
+                ebob = i;
+        }
+ 
+        ekok = (n1 * n2) / ebob;
+        System.out.printf(" %d ve  %d sayılarının EBOB'u %d \n", n1, n2, ebob);
+        System.out.printf(" %d ve  %d sayılarının EKOK'u %d \n", n1, n2, ekok); 
+    } 
+}
+ sayını bölümünü ve kalanını
+ 
+public class JavaOrnekleri {
+  
+    public static void main(String[] args) {
+       
+        int sayi = 25, bolen = 4;
+ 
+        int bolum = sayi / bolen;
+        int kalan = sayi % bolen;
+ 
+        System.out.println("İşlem:"+sayi+"/"+bolen);
+        System.out.println("Bölüm = " + bolum);
+        System.out.println("Kalan = " + kalan);
+    } 
+}
+ yıl hesaplayan
+ int yil = 2018;
+        boolean artik = false;
+ 
+        if(yil % 4 == 0)
+        {
+            if( yil % 100 == 0)
+            {
+                if ( yil % 400 == 0)
+                    artik = true;
+                else
+                    artik = false;
+            }
+            else
+                artik = true;
+        }
+        else
+            artik = false;
+ 
+        if(artik)
+            System.out.println(yil + " artık yıldır.");
+        else
+            System.out.println(yil + " artık yıl değildir.");
+    } 
+}
+negatif pozitif
+ public static void main(String[] args) {
+        Scanner reader = new Scanner(System.in);
+         System.out.print("Bir Sayı Girin:");
+ 
+        double sayi = reader.nextInt();
+        // sayı 0 dan küçükse negatif
+        if (sayi < 0.0)
+            System.out.println(sayi + " Negatiftir.");
+ 
+        // 0'dan büyükse pozitif
+        else if ( sayi > 0.0)
+            System.out.println(sayi + " Pozitiftir.");
+ 
+        // aksi durumda yani 0'a eşitse
+        else
+            System.out.println(sayi + "  Sıfırdır.");
+    } 
+}
+sayının kuvvetini hesaplayan 
+ public static void main(String[] args) {
+        int taban = 3, kuvvet = 4;
+ 
+        long sonuc = 1;
+ 
+        for (;kuvvet != 0; --kuvvet)
+        {
+            sonuc *= taban;
+        }
+ 
+        System.out.println("CEVAP = " + sonuc);
+    }
+}
+tek sayıların toplamaını 
+  public static void main(String[] args) {
+        
+        // Klavyeden okuma yapmak için Scanner nesnesini oluştur.
+        Scanner reader = new Scanner(System.in);
+        
+        System.out.print("Bir Sayı Girin: ");
+ 
+        // nextInt() metodu ile tam sayı türünde değer okuması yapılır.
+        int n = reader.nextInt();
+ 
+	int toplam = 0;
+ 
+        for(int i = 1; i <=n; i++){
+            if(i%2!=0){
+              toplam += i;  
+              //System.out.println(i);
+            }          
+        }
+        System.out.println("Tek Sayıların Toplamı = "+ toplam);
+    } 
+}
+ 1-100 arasındaki asal sayıları 
+
+        int sayac = 0;
+        for(int sayi=2;sayi<=100;sayi++)
+        {
+            int kontrol = 0;
+            for (int i = 2; i < sayi; i++)
+            {
+               if (sayi % i == 0)
+                {
+                    kontrol = 1;
+                    break;
+                } 
+            }
+                
+            if(kontrol==0)
+            {
+                System.out.print(sayi+"\n");
+                sayac++; 
+            }
+        }
+    }    
+}
+ sayısının tersi
+ public static void main(String[] args) {
+        int sayi = 1234, tersi = 0;
+        int yedek=sayi;
+ 
+        for(;sayi != 0; sayi /= 10) {
+            int basamak = sayi % 10;
+            tersi = tersi * 10 + basamak;
+        }
+        System.out.println("Sayının      : " + yedek);
+        System.out.println("Sayının Tersi: " + tersi);
+    } 
+}
+ faktorıyel
+public class JavaOrnekleri {
+  
+    public static void main(String[] args) {
+        Scanner reader = new Scanner(System.in);
+        System.out.print("Bir Sayı Girin:");
+ 
+        int num = reader.nextInt();
+        long faktoriyel = 1;
+        for(int i = 1; i <= num; ++i)
+        {
+            faktoriyel *= i;
+        }
+        System.out.printf("%d Sayısının Faktöriyeli = %d \n", num, faktoriyel);
+    } 
+}
+tam sayı alma
+Scanner scan = new Scanner(System.in);
+    System.out.print("Bir sayı girin: ");
+ 
+    // nextInt() tam sayı okur
+    int sayi = scan.nextInt();
+ 
+    // println() ekrana yazdırır.
+    System.out.println("Girilen Sayı: " + sayi);
+  
+    }
+}
+üç sayıdan büyük olanı
+public static void main(String[] args) {
+        double n1 = -5, n2 = 11.4, n3 = 5;
+ 
+        System.out.println("..:: Sayılar ::..");
+        System.out.println(n1);
+        System.out.println(n2);
+        System.out.println(n3);
+        System.out.println("");
+        if( n1 >= n2 && n1 >= n3)
+            System.out.println(n1 + " sayısı büyüktür.");
+ 
+        else if (n2 >= n1 && n2 >= n3)
+            System.out.println(n2 + " sayısı büyüktür.");
+ 
+        else
+            System.out.println(n3 + " sayısı büyüktür.");
+    } 
+}
+ 1 den 10 kadar olan sayıları topla
+ public static void main(String[] args) {
+    int sayi = 10, toplam = 0;
+ 
+    for(int i = 1; i <= sayi; ++i)
+    {
+        // toplam = toplam + i;
+        toplam += i;
+    }
+    System.out.println("Toplam = " + toplam);
+  }
+}
+1’den N’e Kadar Olan Sayıların Toplamını
+  public static void main(String[] args) {
+        Scanner reader = new Scanner(System.in);
+        System.out.print("Bir Sayı Girin:");
+ 
+        int sayi = reader.nextInt();
+        int toplam = 0;
+ 
+        for(int i = 1; i <= sayi; ++i)
+        {
+            toplam += i;
+        }
+ 
+        System.out.println("Sayıların Toplamı = " + toplam);
+    } 
+}
+faktorıyel hesaplayan
+ public static void main(String[] args) {
+    Scanner reader = new Scanner(System.in);
+    System.out.print("Bir Sayı Girin:");
+    
+    int sayi = reader.nextInt();
+    long faktoriyel = 1;
+    for(int i = 1; i <= sayi; ++i)
+    {
+        // faktoriyel = faktoriyel * i;
+        faktoriyel *= i;
+    }
+    System.out.printf("%d! = %d \n", sayi, faktoriyel);
+  }
+}
+ 
+
+
+
+
