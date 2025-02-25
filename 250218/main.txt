@@ -1,0 +1,81 @@
+package com.example.uygulama1;
+
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
+
+import androidx.activity.EdgeToEdge;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.graphics.Insets;
+import androidx.core.view.ViewCompat;
+import androidx.core.view.WindowInsetsCompat;
+
+public class MainActivity extends AppCompatActivity {
+
+    Button buttonCalistir,buttonHizlan,buttonYavasla,buttonDurdur;
+    TextView textViewDurum;
+
+    Araba araba=new Araba("Renault","Megane",200);
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        EdgeToEdge.enable(this);
+        setContentView(R.layout.activity_main);
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
+            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
+            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
+            return insets;
+        });
+
+        buttonCalistir = findViewById(R.id.button_calistir);
+        buttonHizlan = findViewById(R.id.button_hizlan);
+        buttonYavasla = findViewById(R.id.button_yavasla);
+        buttonDurdur = findViewById(R.id.button_durdur);
+        textViewDurum = findViewById(R.id.textView_durum);
+
+        buttonCalistir.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //textViewDurum.setText(araba.calistir());
+                textViewDurum.setText(durumGuncelle(araba.calistir()));
+            }
+        });
+
+        buttonDurdur.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                textViewDurum.setText(durumGuncelle(araba.durdur()));
+            }
+        });
+
+        buttonHizlan.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                textViewDurum.setText(durumGuncelle(String.valueOf(araba.hizlan(10))));
+            }
+        });
+
+        buttonYavasla.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                textViewDurum.setText(durumGuncelle(araba.yavasla(5)));
+            }
+        });
+
+
+    }
+
+    private String durumGuncelle(String mesaj) {
+        String s="Arabanın markası :"+araba.getMarka()+"\n"+
+                "Arabanın Modeli : "+araba.getModel()+"\n"+
+                "Son Hız : "+araba.getSonHiz()+"\nAnlık Hız: "
+                +araba.getAnlikHiz()+"\n"+mesaj;
+        return s;
+    }
+
+
+
+}
+
