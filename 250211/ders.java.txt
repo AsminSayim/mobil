@@ -1,0 +1,86 @@
+package com.example.uygulama1;
+
+public class Ders {
+
+    String dersAdi;
+    int yazili1;
+    int yazili2;
+    double ortalama;
+    String durum;
+
+    public Ders(String dersAdi, int yazili1, int yazili2) {
+        this.dersAdi = dersAdi;
+        this.setYazili1(yazili1);
+        this.setYazili2(yazili2) ;
+    }
+
+    public String getDersAdi() {
+        return dersAdi;
+    }
+
+    public void setDersAdi(String dersAdi) {
+        this.dersAdi = dersAdi;
+    }
+
+    public int getYazili1() {
+        return yazili1;
+    }
+
+    public void setYazili1(int yazili1) {
+
+        if(yazili1>100){
+            this.yazili1=100;
+        }
+        else{
+            this.yazili1=yazili1;
+        }
+
+    }
+
+    public int getYazili2() {
+        return yazili2;
+    }
+
+    public void setYazili2(int yazili2) {
+        if(yazili2>100){
+            this.yazili2=100;
+        }
+        else{
+            this.yazili2=yazili1;
+        }
+    }
+
+    public double getOrtalama() {
+        return ortalamaHesapla();
+    }
+
+    public void setOrtalama(double ortalama) {
+        this.ortalama = ortalama;
+    }
+
+    public String getDurum() {
+        return durumHesapla();
+    }
+
+    public void setDurum(String durum) {
+        this.durum = durum;
+    }
+
+    public double ortalamaHesapla(){
+        ortalama=(yazili1+yazili2)/ 2.0;
+        return ortalama;
+    }
+
+    public String durumHesapla(){
+        if(ortalama>50){
+            return "Geçti";
+        }
+        else {
+            return "Kaldı";
+        }
+    }
+
+    public String dersBilgi(){
+        return dersAdi+" Ortalama: "+getOrtalama()+"("+getDurum()+")";
+    }
+}
